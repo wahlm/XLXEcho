@@ -1,0 +1,7 @@
+debian/.debhelper/
+debian/debhelper-build-stamp
+debian/files
+debian/xlxecho.postrm.debhelper
+debian/xlxecho.substvars
+debian/xlxecho/
+xlxecho
