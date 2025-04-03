@@ -4,10 +4,11 @@ After=network.target
 Requires=network-online.target
 
 [Service]
+EnvironmentFile=/etc/default/xlxecho
 Type=simple
 User=root
 Group=root
-ExecStart=/usr/sbin/xlxecho 0.0.0.0
+ExecStart=/usr/sbin/xlxecho $PEER $LISTEN_IP
 ExecReload=/bin/kill -HUP $MAINPID
 Restart=always
 

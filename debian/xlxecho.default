@@ -1,0 +1,4 @@
+# The Peer name of the service
+PEER=ECHO
+# Listen IP address
+LISTEN_IP=0.0.0.0
