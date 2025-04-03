@@ -1,0 +1,15 @@
+[Unit]
+Description=Echo functionality for XLX
+After=network.target
+Requires=network-online.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/usr/sbin/xlxecho 0.0.0.0
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

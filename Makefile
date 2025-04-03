@@ -1,0 +1,23 @@
+CC=gcc
+SOURCES=$(wildcard *.c)
+OBJECTS=$(SOURCES:.c=.o)
+EXECUTABLE=xlxecho
+
+PREFIX?=/usr/local/
+EXEC_PREFIX?=$(PREFIX)
+SBIN_DIR?=$(EXEC_PREFIX)sbin
+INSTALL?=install
+INSTALL_PROGRAM?=$(INSTALL)
+
+
+all: $(SOURCES) $(EXECUTABLE)
+
+$(EXECUTABLE): $(SOURCES)
+	$(CC) $(LDFLAGS) $(SOURCES) -o $@
+
+clean:
+	$(RM) $(EXECUTABLE)
+
+install:
+	$(INSTALL) -d $(DESTDIR)$(SBIN_DIR)
+	$(INSTALL_PROGRAM) $(EXECUTABLE) $(DESTDIR)$(SBIN_DIR)
